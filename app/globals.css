@@ -115,8 +115,6 @@ button, input, textarea, select { font: inherit; }
 .footer-brand .brand-mark { background: #155e4e; }
 .footer-brand .brand-name { color: #fff; }
 .footer-about > p { max-width: 275px; margin-top: 12px; color: #bfd0c7; font-size: 10px; line-height: 1.6; }
-.demo-badge { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; border: 1px solid #ffffff20; border-radius: 99px; padding: 7px 10px; color: #c6d9ce; font-size: 8px; }
-.demo-badge i { width: 4px; height: 4px; border-radius: 50%; background: #e99b65; }
 .footer-column { display: grid; align-content: start; gap: 10px; }
 .footer-column h2 { margin-bottom: 3px; color: #fff; font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .footer-column a { display: flex; align-items: center; gap: 6px; color: #c1d2c9; font-size: 9px; }

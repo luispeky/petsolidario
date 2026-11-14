@@ -18,9 +18,9 @@ export default function FosterHomePage() {
           <p className="eyebrow">Acolhimento com responsabilidade</p>
           <h1 className="mt-3 font-serif text-5xl font-bold leading-tight tracking-tight text-forest">Um lar temporário pode mudar uma recuperação.</h1>
           <p className="mt-5 max-w-xl text-base leading-7 text-[#66766e]">
-            Oferecer um espaço seguro por um período combinado ajuda um animal a sair de uma situação difícil enquanto uma solução permanente é organizada.
+            Oferecer um espaço seguro por um período combinado ajuda um animal a se recuperar enquanto a organização acompanha os próximos passos.
           </p>
-          <Link className="btn mt-7 gap-2 rounded-xl" href="/contato">Quero oferecer acolhimento <ArrowRight size={17} /></Link>
+          <Link className="btn mt-7 gap-2 rounded-xl" href="/contato">Saiba como falar com a equipe <ArrowRight size={17} /></Link>
         </div>
         <div className="grid min-h-[300px] place-items-center rounded-[28px] bg-[#e6f1e7] p-8 text-center">
           <div>
@@ -47,7 +47,7 @@ export default function FosterHomePage() {
         </div>
       </div>
       <p className="mt-8 rounded-2xl bg-[#f8f5ed] p-5 text-sm leading-6 text-[#66766e]">
-        O Pet Solidário é um protótipo acadêmico. Os exemplos e números exibidos no site são demonstrativos; disponibilidade de acolhimento deve ser confirmada diretamente com a organização responsável.
+        A disponibilidade de acolhimento varia conforme cada caso. Combine previamente com a organização responsável as necessidades do animal, o período e as orientações de cuidado.
       </p>
     </section>
   );

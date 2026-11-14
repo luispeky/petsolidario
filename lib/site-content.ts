@@ -1,20 +1,20 @@
-export const demoOrganization = {
-  id: "demo-org",
-  name: "Rede Pet Solidário",
+export const organization = {
+  id: "pet-solidario",
+  name: "Pet Solidário",
   slug: "rede-pet-solidario",
   city: "Belém",
   state: "PA",
-  description: "Perfil demonstrativo de uma rede de proteção animal em Belém.",
+  description: "Organização de proteção animal com atuação em Belém, dedicada à adoção responsável, ao acolhimento e à mobilização comunitária.",
   phone: null,
   imageUrl: null,
 };
 
-const demoOrgSummary = {
-  name: demoOrganization.name,
-  slug: demoOrganization.slug,
+const organizationSummary = {
+  name: organization.name,
+  slug: organization.slug,
 };
 
-export const demoPets = [
+export const pets = [
   {
     id: "thor",
     name: "Thor",
@@ -27,8 +27,8 @@ export const demoPets = [
     city: "Marco",
     state: "PA",
     imageUrl: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=85",
-    description: "Perfil demonstrativo de um cão adulto, sociável e à procura de uma família.",
-    organization: demoOrgSummary,
+    description: "Cão adulto, sociável e à procura de uma família responsável.",
+    organization: organizationSummary,
   },
   {
     id: "luna",
@@ -42,8 +42,8 @@ export const demoPets = [
     city: "Nazaré",
     state: "PA",
     imageUrl: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=800&q=85",
-    description: "Perfil demonstrativo de uma gata curiosa que gosta de ambientes tranquilos.",
-    organization: demoOrgSummary,
+    description: "Gata curiosa que se adapta melhor a ambientes tranquilos.",
+    organization: organizationSummary,
   },
   {
     id: "mel",
@@ -57,8 +57,8 @@ export const demoPets = [
     city: "Umarizal",
     state: "PA",
     imageUrl: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=85",
-    description: "Perfil demonstrativo de uma filhote brincalhona que precisa de acompanhamento.",
-    organization: demoOrgSummary,
+    description: "Filhote brincalhona que precisa de acompanhamento e de uma família preparada.",
+    organization: organizationSummary,
   },
   {
     id: "bento",
@@ -72,40 +72,40 @@ export const demoPets = [
     city: "Guamá",
     state: "PA",
     imageUrl: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=85",
-    description: "Perfil demonstrativo de um cão adulto que procura um lar com espaço para brincar.",
-    organization: demoOrgSummary,
+    description: "Cão adulto que procura um lar com espaço para brincar.",
+    organization: organizationSummary,
   },
 ];
 
-export const demoCampaigns = [
+export const campaigns = [
   {
     id: "kit-de-cuidados",
     title: "Kit de cuidados para resgates",
-    description: "Campanha demonstrativa para apresentar itens básicos de acolhimento, higiene e transporte.",
+    description: "Itens essenciais de acolhimento, higiene e transporte ajudam a manter os cuidados com os animais resgatados.",
     goalCents: 250000,
     raisedCents: 97500,
     imageUrl: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1000&q=85",
-    donationInstructions: "Conteúdo demonstrativo. Esta campanha não recebe doações reais e não possui chave Pix.",
+    donationInstructions: "Para conhecer as formas de contribuição, consulte os canais oficiais do Pet Solidário. Este site não processa pagamentos.",
     organization: {
-      name: demoOrganization.name,
-      slug: demoOrganization.slug,
-      city: demoOrganization.city,
-      state: demoOrganization.state,
+      name: organization.name,
+      slug: organization.slug,
+      city: organization.city,
+      state: organization.state,
     },
   },
   {
     id: "apoio-veterinario",
     title: "Apoio veterinário",
-    description: "Campanha demonstrativa para mostrar como organizações podem explicar uma necessidade de atendimento.",
+    description: "Apoio para consultas, exames e cuidados veterinários dos animais acompanhados pela organização.",
     goalCents: 400000,
     raisedCents: 160000,
     imageUrl: "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1000&q=85",
-    donationInstructions: "Conteúdo demonstrativo. Esta campanha não recebe doações reais e não possui chave Pix.",
+    donationInstructions: "Para conhecer as formas de contribuição, consulte os canais oficiais do Pet Solidário. Este site não processa pagamentos.",
     organization: {
-      name: demoOrganization.name,
-      slug: demoOrganization.slug,
-      city: demoOrganization.city,
-      state: demoOrganization.state,
+      name: organization.name,
+      slug: organization.slug,
+      city: organization.city,
+      state: organization.state,
     },
   },
 ];
