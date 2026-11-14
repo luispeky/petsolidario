@@ -30,6 +30,12 @@ const helpPages = {
   },
 } as const;
 
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return Object.keys(helpPages).map((tipo) => ({ tipo }));
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ tipo: string }> }): Promise<Metadata> {
   const { tipo } = await params;
   const page = helpPages[tipo as keyof typeof helpPages];

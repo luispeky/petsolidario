@@ -1,39 +1,26 @@
 # Pet Solidário
 
-Plataforma em português para adoção responsável, campanhas solidárias e organizações de proteção animal. Aplicação Next.js App Router, TypeScript, Tailwind CSS, PostgreSQL/Prisma e uploads Azure Blob Storage (Azurite local).
+Site demonstrativo em português para adoção responsável, resgates e apoio a organizações de proteção animal. Construído com Next.js, TypeScript e Tailwind CSS e publicado como site estático no GitHub Pages.
 
-## Requisitos
+## Publicação
 
-- Node.js 20.9+ e npm
-- Docker Desktop ou Docker Engine com Compose
+O workflow em `.github/workflows/deploy.yml` constrói o site e publica automaticamente quando há um push para `main`. Para ativar a primeira publicação, no GitHub abra **Settings → Pages** e selecione **GitHub Actions** como fonte de publicação.
+
+Depois que a primeira execução terminar, o site ficará disponível em:
+
+<https://luispeky.github.io/petsolidario/>
 
 ## Desenvolvimento local
 
-1. Copie `.env.example` para `.env` e substitua `AUTH_SECRET` por um segredo aleatório de pelo menos 32 caracteres. Não use credenciais reais no repositório.
-2. Inicie os serviços locais: `docker compose up -d`.
-3. Instale dependências: `npm install`.
-4. Gere Prisma Client e aplique o schema: `npm run db:generate` e `npm run db:push`.
-5. Inicie o site: `npm run dev`, então abra http://localhost:3000.
+- Requisitos: Node.js 20.9+ e npm.
+- Instale dependências com `npm ci`.
+- Inicie o site com `npm run dev` e abra <http://localhost:3000>.
+- Gere a versão estática com `npm run build`; os arquivos prontos para publicação ficam em `out/`.
 
-PostgreSQL é disponibilizado em `localhost:5432` e Azurite Blob em `localhost:10000`. Os volumes persistentes podem ser removidos com `docker compose down -v` (isso apaga os dados locais).
+## Limites da versão GitHub Pages
 
-Para produção, configure `DATABASE_URL`, `AUTH_SECRET`, `AZURE_STORAGE_CONNECTION_STRING`, `AZURE_STORAGE_CONTAINER` e opcionalmente `AZURE_BLOB_PUBLIC_BASE_URL` no ambiente seguro do host. Use armazenamento/container com estratégia de acesso público/CDN apropriada; não grave segredos no código.
+GitHub Pages hospeda somente arquivos estáticos. Os animais, campanhas e organizações desta publicação são dados demonstrativos; formulários, login, painel e gravação de dados não são executados nem enviados.
 
-## Funcionalidades MVP
+Os handlers de API foram preservados em `backend/api/`, mas não são rotas ativas do site estático. Para habilitar cadastros, autenticação, formulários ou dados reais, será necessário hospedar o backend e o PostgreSQL em um serviço com suporte a servidor, e apontar a interface para esse serviço.
 
-- Página inicial pública com navegação para adoção, resgate, campanhas e lar temporário. Os perfis e indicadores em destaque na página inicial são demonstrativos e estão identificados como protótipo acadêmico.
-- Páginas informativas para as formas de ajudar, contatos mediados, termos de uso e privacidade. Se o banco ainda não estiver configurado, as seções de dados e contato exibem uma orientação em vez de falharem.
-- Catálogo público de pets, páginas de detalhe, perfis de organização e campanhas.
-- Cadastro/login de ONGs e protetores; sessão em cookie HttpOnly assinado.
-- Painel para atualizar perfil, cadastrar/excluir pets e campanhas e acompanhar/atualizar solicitações.
-- Formulários públicos de adoção, contato e voluntariado.
-- Upload autenticado de imagens JPEG/PNG/WebP até 5 MB ao Blob Storage.
-- Campanhas exibem as instruções de doação da própria organização. Não há checkout nem processamento de pagamentos.
-
-## Verificações
-
-- `npm run build`
-- `npx tsc --noEmit`
-- `npm run db:generate`
-
-O build das páginas dinâmicas requer PostgreSQL disponível ao acessar o site; não há dados de demonstração ou seed incluídos.
+Não publique segredos. `.env` e arquivos `.env.*.local` estão excluídos pelo `.gitignore`; `.env.example` contém apenas valores de desenvolvimento.

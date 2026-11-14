@@ -1,16 +1,44 @@
-import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { db } from "@/lib/db";
-import { PetCard, CampaignCard } from "@/components/cards";
-import { ContactForm } from "@/components/contact-form";
-export const dynamic = "force-dynamic";
+import { notFound } from "next/navigation";
+import { ArrowLeft, ArrowRight, MapPin } from "lucide-react";
+import { CampaignCard, PetCard } from "@/components/cards";
+import { demoCampaigns, demoOrganization, demoPets } from "@/lib/demo-content";
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return [{ id: demoOrganization.slug }];
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  return { title: id === demoOrganization.slug ? `${demoOrganization.name} — perfil demonstrativo` : "Organização" };
+}
+
 export default async function OrganizationDetails({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const org = await db.organization.findUnique({ where: { slug: id }, include: { pets: { where: { status: "AVAILABLE" }, include: { organization: { select: { name: true, slug: true } } }, orderBy: { createdAt: "desc" } }, campaigns: { include: { organization: { select: { name: true, slug: true, city: true, state: true } } }, orderBy: { createdAt: "desc" } } } });
-  if (!org) notFound();
-  return <section className="container section"><Link href="/organizacoes" className="font-bold text-forest">← Todas as organizações</Link><div className="card mt-6 p-7 md:p-10"><p className="eyebrow">Organização parceira</p><h1 className="mt-3 text-4xl font-black">{org.name}</h1><p className="mt-2 text-[#66766e]">📍 {org.city}, {org.state}{org.phone ? ` · ${org.phone}` : ""}</p><p className="mt-6 max-w-3xl whitespace-pre-wrap leading-7">{org.description}</p></div>
-    <div className="mt-12"><h2 className="text-2xl font-black">Animais para adoção</h2>{org.pets.length ? <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{org.pets.map(p => <PetCard key={p.id} pet={p} />)}</div> : <p className="mt-3 text-[#66766e]">Nenhum animal disponível no momento.</p>}</div>
-    <div className="mt-12"><h2 className="text-2xl font-black">Campanhas</h2>{org.campaigns.length ? <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{org.campaigns.map(c => <CampaignCard key={c.id} campaign={c} />)}</div> : <p className="mt-3 text-[#66766e]">Nenhuma campanha publicada no momento.</p>}</div>
-    <div className="mt-12 grid gap-8 md:grid-cols-2"><div><p className="eyebrow">Vamos conversar?</p><h2 className="mt-2 text-3xl font-black">Entre em contato.</h2><p className="mt-3 text-[#66766e]">Dúvidas, voluntariado ou vontade de ajudar? Mande uma mensagem para a equipe.</p></div><div className="card p-6"><ContactForm organizationId={org.id} /></div></div>
-  </section>;
+  if (id !== demoOrganization.slug) notFound();
+
+  return (
+    <section className="container section">
+      <Link href="/organizacoes" className="inline-flex items-center gap-2 font-bold text-forest"><ArrowLeft size={16} /> Todas as organizações</Link>
+      <div className="card mt-6 p-7 md:p-10">
+        <p className="eyebrow">Perfil demonstrativo</p>
+        <h1 className="mt-3 font-serif text-4xl font-bold text-forest">{demoOrganization.name}</h1>
+        <p className="mt-2 flex items-center gap-1 text-[#66766e]"><MapPin size={15} /> {demoOrganization.city}, {demoOrganization.state}</p>
+        <p className="mt-6 max-w-3xl leading-7">{demoOrganization.description}</p>
+        <p className="mt-5 rounded-xl bg-[#f8f5ed] p-4 text-sm leading-6 text-[#66766e]">Este perfil é ilustrativo. Não envie mensagens nem doações para uma organização real com base nestes dados.</p>
+        <Link href="/contatos-mediados" className="btn btn-outline mt-5 gap-2">Sobre os contatos <ArrowRight size={16} /></Link>
+      </div>
+      <div className="mt-12">
+        <h2 className="font-serif text-3xl font-bold text-forest">Perfis demonstrativos de animais</h2>
+        <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{demoPets.map((pet) => <PetCard key={pet.id} pet={pet} />)}</div>
+      </div>
+      <div className="mt-12">
+        <h2 className="font-serif text-3xl font-bold text-forest">Campanhas demonstrativas</h2>
+        <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{demoCampaigns.map((campaign) => <CampaignCard key={campaign.id} campaign={campaign} />)}</div>
+      </div>
+    </section>
+  );
 }

@@ -1,44 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Heart, MapPin, PawPrint, ShieldCheck } from "lucide-react";
-
-const demoPets = [
-  {
-    name: "Thor",
-    species: "Cão · macho",
-    age: "2 anos",
-    size: "Médio",
-    location: "Marco",
-    image: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=85",
-    color: "#d7eee3",
-  },
-  {
-    name: "Luna",
-    species: "Gato · fêmea",
-    age: "1 ano",
-    size: "Pequeno",
-    location: "Nazaré",
-    image: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=800&q=85",
-    color: "#f0d7b6",
-  },
-  {
-    name: "Mel",
-    species: "Cão · fêmea",
-    age: "8 meses",
-    size: "Pequeno",
-    location: "Umarizal",
-    image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=85",
-    color: "#e7c786",
-  },
-  {
-    name: "Bento",
-    species: "Cão · macho",
-    age: "4 anos",
-    size: "Grande",
-    location: "Guamá",
-    image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=85",
-    color: "#f1d081",
-  },
-];
+import { demoPets } from "@/lib/demo-content";
 
 const journey = [
   ["01", "Encontrou ou resgatou", "Um caso é encontrado ou acolhido."],
@@ -121,16 +83,16 @@ export default function HomePage() {
           <div className="demo-pet-grid">
             {demoPets.map((pet, index) => (
               <article className="demo-pet-card" key={pet.name}>
-                <div className="demo-pet-photo" role="img" aria-label={`Foto demonstrativa de ${pet.name}`} style={{ backgroundImage: `url("${pet.image}")`, backgroundColor: pet.color }}>
+                <div className="demo-pet-photo" role="img" aria-label={`Foto demonstrativa de ${pet.name}`} style={{ backgroundImage: `url("${pet.imageUrl}")` }}>
                   <span className={`pet-status ${index === 2 ? "pet-status-waiting" : ""}`}>{index === 2 ? "Em atendimento" : "Disponível"}</span>
                   <span className="pet-code">PS-00000{index + 1}</span>
                 </div>
                 <div className="demo-pet-info">
-                  <p className="demo-pet-species">{pet.species}</p>
+                  <p className="demo-pet-species">{pet.displaySpecies}</p>
                   <div className="demo-pet-name-row"><h3>{pet.name}</h3><Heart size={18} /></div>
                   <div className="demo-pet-tags"><span>{pet.age}</span><span>{pet.size}</span></div>
-                  <p className="demo-pet-location"><MapPin size={14} /> {pet.location}</p>
-                  <Link href="/adocao" className="demo-pet-link">Conhecer {pet.name}<ArrowRight size={15} /></Link>
+                  <p className="demo-pet-location"><MapPin size={14} /> {pet.city}</p>
+                  <Link href={`/adocao/${pet.id}`} className="demo-pet-link">Conhecer {pet.name}<ArrowRight size={15} /></Link>
                 </div>
               </article>
             ))}

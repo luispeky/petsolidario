@@ -1,16 +1,17 @@
-import { redirect } from "next/navigation";
-import { db } from "@/lib/db";
-import { getSessionOrganization } from "@/lib/auth";
-import { Dashboard } from "@/components/dashboard";
-export const dynamic = "force-dynamic";
-export default async function DashboardPage() {
-  const org = await getSessionOrganization();
-  if (!org) redirect("/login");
-  const [organization, pets, campaigns, requests] = await Promise.all([
-    db.organization.findUniqueOrThrow({ where: { id: org.id }, select: { name: true, city: true, state: true, description: true, phone: true, imageUrl: true } }),
-    db.pet.findMany({ where: { organizationId: org.id }, select: { id: true, name: true, status: true }, orderBy: { createdAt: "desc" } }),
-    db.campaign.findMany({ where: { organizationId: org.id }, select: { id: true, title: true }, orderBy: { createdAt: "desc" } }),
-    db.contactRequest.findMany({ where: { organizationId: org.id }, orderBy: { createdAt: "desc" } }),
-  ]);
-  return <section className="container section"><Dashboard organization={organization} pets={pets} campaigns={campaigns} requests={requests.map(request => ({ ...request, createdAt: request.createdAt.toISOString() }))} /></section>;
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = { title: "Painel da organização" };
+
+export default function DashboardPage() {
+  return (
+    <section className="container section">
+      <div className="mx-auto max-w-xl rounded-3xl bg-[#edf5eb] p-8 text-center sm:p-12">
+        <p className="eyebrow">Painel da organização</p>
+        <h1 className="mt-3 font-serif text-4xl font-bold text-forest">O painel exige um backend.</h1>
+        <p className="mt-4 text-sm leading-6 text-[#66766e]">Esta publicação no GitHub Pages é somente estática. Cadastros, atualizações e mensagens não ficam disponíveis aqui.</p>
+        <Link className="btn mt-6 rounded-xl" href="/login">Voltar à área das organizações</Link>
+      </div>
+    </section>
+  );
 }

@@ -1,9 +1,17 @@
-import { redirect } from "next/navigation";
-import { getSessionOrganization } from "@/lib/auth";
-import { AuthForm } from "@/components/auth-form";
-export const dynamic = "force-dynamic";
-export default async function LoginPage() {
-  if (await getSessionOrganization()) redirect("/painel");
-  return <section className="container grid min-h-[70vh] items-center gap-10 py-12 md:grid-cols-2"><div><p className="eyebrow">Área de quem cuida</p><h1 className="mt-3 text-5xl font-black leading-tight">Sua causa merece um espaço.</h1><p className="mt-5 max-w-md leading-7 text-[#66766e]">Cadastre animais para adoção, conte sua história e compartilhe campanhas com pessoas que querem ajudar.</p><div className="mt-7 flex flex-wrap gap-3"><span className="pill">🐾 Perfil da organização</span><span className="pill">💛 Campanhas</span><span className="pill">📨 Contatos</span></div></div>
-    <div className="card mx-auto w-full max-w-md p-7"><h2 className="text-2xl font-black">Bem-vindo(a)!</h2><p className="mb-6 mt-2 text-sm text-[#66766e]">Entre ou crie uma conta para sua organização.</p><AuthForm /></div></section>;
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = { title: "Área das organizações" };
+
+export default function LoginPage() {
+  return (
+    <section className="container section">
+      <div className="mx-auto max-w-xl rounded-3xl bg-[#edf5eb] p-8 text-center sm:p-12">
+        <p className="eyebrow">Área das organizações</p>
+        <h1 className="mt-3 font-serif text-4xl font-bold text-forest">Acesso indisponível nesta versão estática.</h1>
+        <p className="mt-4 text-sm leading-6 text-[#66766e]">O GitHub Pages hospeda apenas páginas estáticas; login e painel precisam de um servidor e banco de dados. O código do backend foi mantido no repositório, mas não é executado pelo Pages.</p>
+        <div className="mt-6 flex flex-wrap justify-center gap-3"><Link className="btn rounded-xl" href="/">Voltar ao início</Link><Link className="btn btn-outline rounded-xl" href="/organizacoes">Ver o site demonstrativo</Link></div>
+      </div>
+    </section>
+  );
 }
