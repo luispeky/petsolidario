@@ -4,7 +4,7 @@ Site demonstrativo em português para adoção responsável, resgates e apoio a 
 
 ## Publicação
 
-O workflow em `.github/workflows/deploy.yml` constrói o site e publica automaticamente quando há um push para `main`. Para ativar a primeira publicação, no GitHub abra **Settings → Pages** e selecione **GitHub Actions** como fonte de publicação.
+O workflow em `.github/workflows/deploy.yml` constrói o site e publica automaticamente quando há um push para `main`. Ele também tenta habilitar o GitHub Pages na primeira execução. Se as permissões do repositório impedirem isso, abra **Settings → Pages** e selecione **GitHub Actions** como fonte de publicação.
 
 Depois que a primeira execução terminar, o site ficará disponível em:
 
