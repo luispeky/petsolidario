@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: petsolidario
+      POSTGRES_USER: pet
+      POSTGRES_PASSWORD: pets_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pet -d petsolidario"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    command: azurite-blob --blobHost 0.0.0.0 --location /data --debug /data/debug.log
+    ports:
+      - "10000:10000"
+    volumes:
+      - azurite_data:/data
+volumes:
+  postgres_data:
+  azurite_data:
