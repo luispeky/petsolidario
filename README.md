@@ -1,6 +1,6 @@
 # Pet Solidário
 
-Site demonstrativo em português para adoção responsável, resgates e apoio a organizações de proteção animal. Construído com Next.js, TypeScript e Tailwind CSS e publicado como site estático no GitHub Pages.
+Site institucional do Pet Solidário, organização de proteção animal com atuação em Belém/PA. Divulga iniciativas de resgate, adoção responsável e apoio comunitário. Construído com Next.js, TypeScript e Tailwind CSS e publicado como site estático no GitHub Pages.
 
 ## Publicação
 
@@ -19,8 +19,8 @@ Depois que a primeira execução terminar, o site ficará disponível em:
 
 ## Limites da versão GitHub Pages
 
-GitHub Pages hospeda somente arquivos estáticos. Os animais, campanhas e organizações desta publicação são dados demonstrativos; formulários, login, painel e gravação de dados não são executados nem enviados.
+GitHub Pages hospeda somente arquivos estáticos. Esta publicação divulga informações, mas não executa formulários, login, painel, pagamentos ou gravação de dados. Confirme a disponibilidade de animais e campanhas e as formas oficiais de contribuição diretamente com o Pet Solidário.
 
-Os handlers de API foram preservados em `backend/api/`, mas não são rotas ativas do site estático. Para habilitar cadastros, autenticação, formulários ou dados reais, será necessário hospedar o backend e o PostgreSQL em um serviço com suporte a servidor, e apontar a interface para esse serviço.
+Os handlers de API foram preservados em `backend/api/`, mas não são rotas ativas do site estático. Para habilitar cadastros, autenticação, formulários ou atualização dinâmica de dados, será necessário hospedar o backend e o PostgreSQL em um serviço com suporte a servidor, e apontar a interface para esse serviço.
 
 Não publique segredos. `.env` e arquivos `.env.*.local` estão excluídos pelo `.gitignore`; `.env.example` contém apenas valores de desenvolvimento.

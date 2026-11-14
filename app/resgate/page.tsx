@@ -20,7 +20,7 @@ export default function RescuePage() {
           Reunir informações claras ajuda protetores e pessoas da comunidade a entender o que está acontecendo e como podem colaborar.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link className="btn gap-2 rounded-xl" href="/contato">Pedir apoio <ArrowRight size={17} /></Link>
+          <Link className="btn gap-2 rounded-xl" href="/contato">Orientações para contato <ArrowRight size={17} /></Link>
           <Link className="btn btn-outline gap-2 rounded-xl" href="/lar-temporario"><HeartHandshake size={17} /> Conhecer lares temporários</Link>
         </div>
       </div>

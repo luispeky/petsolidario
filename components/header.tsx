@@ -35,15 +35,14 @@ export function Footer() {
               <span className="brand-mark"><PawPrint size={20} /></span>
               <span className="brand-name">pet<small>solidário</small></span>
             </Link>
-            <p>Da rua para um cuidado seguro. Ligamos pessoas, casos e possibilidades de apoio em Belém/PA.</p>
-            <span className="demo-badge">Dados demonstrativos <i /> Protótipo acadêmico</span>
+            <p>Proteção animal, adoção responsável e mobilização comunitária em Belém/PA.</p>
           </div>
-          <div className="footer-column"><h2>Encontre</h2><Link href="/adocao">Adotar</Link><Link href="/resgate">Perdidos e encontrados</Link><Link href="/organizacoes">Organizações parceiras</Link></div>
-          <div className="footer-column"><h2>Participe</h2><Link href="/resgate">Registar um resgate</Link><Link href="/lar-temporario">Oferecer lar temporário</Link><Link href="/#ajudar">Outras formas de ajudar</Link></div>
+          <div className="footer-column"><h2>Encontre</h2><Link href="/adocao">Adotar</Link><Link href="/resgate">Orientações para resgate</Link><Link href="/organizacoes">Conheça o Pet Solidário</Link></div>
+          <div className="footer-column"><h2>Participe</h2><Link href="/resgate">Como ajudar em um resgate</Link><Link href="/lar-temporario">Oferecer lar temporário</Link><Link href="/#ajudar">Outras formas de ajudar</Link></div>
           <div className="footer-column"><h2>Transparência</h2><Link href="/termos">Termos de uso</Link><Link href="/privacidade">Política de privacidade</Link><Link href="/contatos-mediados"><ShieldCheck size={14} /> Contatos mediados</Link></div>
         </div>
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Pet Solidário — Protótipo acadêmico.</p>
+          <p>© {new Date().getFullYear()} Pet Solidário · Proteção animal em Belém/PA.</p>
           <p><Heart size={14} /> Feito para mobilizar cuidado.</p>
         </div>
       </div>

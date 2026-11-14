@@ -55,7 +55,7 @@ export default async function HelpDetailPage({ params }: { params: Promise<{ tip
           <p className="eyebrow">Participe da rede</p>
           <h1 className="mt-3 font-serif text-5xl font-bold leading-tight tracking-tight text-forest">{page.title}</h1>
           <p className="mt-5 max-w-xl text-base leading-7 text-[#66766e]">{page.intro}</p>
-          <Link className="btn mt-7 gap-2 rounded-xl" href="/contato">Falar com uma organização <ArrowRight size={16} /></Link>
+          <Link className="btn mt-7 gap-2 rounded-xl" href="/organizacoes">Conheça o Pet Solidário <ArrowRight size={16} /></Link>
         </div>
         <aside className="card p-6 sm:p-8">
           <span className="grid h-12 w-12 place-items-center rounded-xl bg-[#edf5ec] text-forest"><HeartHandshake size={23} /></span>
