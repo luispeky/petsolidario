@@ -39,7 +39,7 @@ export function Footer() {
           </div>
           <div className="footer-column"><h2>Encontre</h2><Link href="/adocao">Adotar</Link><Link href="/resgate">Orientações para resgate</Link><Link href="/organizacoes">Conheça o Pet Solidário</Link></div>
           <div className="footer-column"><h2>Participe</h2><Link href="/resgate">Como ajudar em um resgate</Link><Link href="/lar-temporario">Oferecer lar temporário</Link><Link href="/#ajudar">Outras formas de ajudar</Link></div>
-          <div className="footer-column"><h2>Transparência</h2><Link href="/termos">Termos de uso</Link><Link href="/privacidade">Política de privacidade</Link><Link href="/contatos-mediados"><ShieldCheck size={14} /> Contatos mediados</Link></div>
+          <div className="footer-column"><h2>Transparência</h2><Link href="/termos">Termos de uso</Link><Link href="/privacidade">Política de privacidade</Link><Link href="/contatos-mediados"><ShieldCheck size={14} /> Orientações de contato</Link></div>
         </div>
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Pet Solidário · Proteção animal em Belém/PA.</p>
