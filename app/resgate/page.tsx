@@ -36,7 +36,7 @@ export default function RescuePage() {
       </div>
 
       <div className="mt-8 grid gap-5 rounded-3xl bg-[#edf5eb] p-7 md:grid-cols-[auto_1fr] md:items-center md:p-9">
-        <span className="grid h-14 w-14 place-items-center rounded-2xl bg-white text-forest"><ShieldCheck size={26} /></span>
+        <span className="grid h-14 w-14 place-items-center rounded-2xl bg-cream text-forest"><ShieldCheck size={26} /></span>
         <div>
           <h2 className="text-xl font-black text-forest">Compartilhe informações úteis</h2>
           <p className="mt-2 text-sm leading-6 text-[#66766e]"><MapPin className="mr-1 inline" size={15} /> Informe o bairro ou um ponto de referência, descreva o estado do animal e, se for seguro, inclua uma foto recente.</p>

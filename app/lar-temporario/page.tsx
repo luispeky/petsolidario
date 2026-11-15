@@ -24,7 +24,7 @@ export default function FosterHomePage() {
         </div>
         <div className="grid min-h-[300px] place-items-center rounded-[28px] bg-[#e6f1e7] p-8 text-center">
           <div>
-            <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-white text-forest"><House size={30} /></span>
+            <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-cream text-forest"><House size={30} /></span>
             <p className="mx-auto mt-5 max-w-sm font-serif text-2xl font-bold leading-snug text-forest">Um espaço temporário pode ser o começo de uma nova história.</p>
             <p className="mt-3 text-sm text-[#66766e]">Cada acolhimento é combinado com cuidado.</p>
           </div>
