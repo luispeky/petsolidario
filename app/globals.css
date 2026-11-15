@@ -169,3 +169,63 @@ button, input, textarea, select { font: inherit; }
   .help-card { min-height: 78px; }
   .footer-bottom { flex-direction: column; }
 }
+
+body { font-size: 16px; line-height: 1.55; }
+main .text-xs { font-size: .8125rem; line-height: 1.5; }
+main .text-sm { font-size: .9375rem; }
+.btn { min-height: 44px; font-size: 15px; }
+.site-nav, .header-actions { font-size: 14px; }
+.header-cta { min-height: 42px; font-size: 14px; }
+.brand-name small { font-size: 9px; }
+.home-eyebrow { font-size: 12px; }
+.home-hero-actions .btn { font-size: 14px; }
+.home-network-note p { font-size: 13px; }
+.home-network-note > span { font-size: 10px; }
+.home-photo-note b { font-size: 13px; }
+.home-photo-note small { font-size: 12px; }
+.home-stats span { font-size: 12px; }
+.journey-number { font-size: 12px; }
+.journey-step h3 { font-size: 15px; }
+.journey-step p { font-size: 14px; }
+.text-link { font-size: 14px; }
+.pet-status, .pet-code { font-size: 11px; }
+.demo-pet-species { font-size: 11px; }
+.demo-pet-tags span { font-size: 11px; }
+.demo-pet-location { font-size: 12px; }
+.demo-pet-link { font-size: 13px; }
+.help-card b { font-size: 14px; }
+.help-card small { font-size: 13px; }
+.foster-copy .eyebrow { font-size: 12px; }
+.foster-copy > p:not(.eyebrow) { font-size: 15px; }
+.foster-copy .btn { font-size: 14px; }
+.footer-about > p { font-size: 13px; }
+.footer-column h2 { font-size: 12px; }
+.footer-column a { font-size: 13px; }
+.footer-bottom { font-size: 12px; }
+
+@media(max-width:900px) {
+  .header-inner { flex-wrap: wrap; }
+  .site-nav { order: 3; width: 100%; justify-content: flex-start; overflow-x: auto; padding: 8px 0; white-space: nowrap; }
+}
+@media(max-width:700px) {
+  .container { width: calc(100% - 32px); }
+  .site-nav { gap: 20px; font-size: 14px; }
+  .header-actions { gap: 10px; font-size: 14px; }
+  .header-login { font-size: 14px; }
+  .header-cta { min-height: 40px; padding: 8px 11px; font-size: 13px; }
+  .home-title { font-size: clamp(2.5rem, 12vw, 4rem); }
+  .home-intro { font-size: 16px; }
+  .home-hero-actions .btn { min-height: 44px; padding-inline: 13px; font-size: 13px; }
+  .section-heading-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .section-heading-row .text-link { margin-top: 0; }
+  .footer-grid { gap: 28px 20px; }
+  .footer-column { gap: 12px; }
+}
+@media(max-width:420px) {
+  .header-cta { padding-inline: 9px; font-size: 12px; }
+  .home-hero-actions .btn { padding-inline: 11px; font-size: 12px; }
+}
+@media(max-width:360px) {
+  .demo-pet-grid { grid-template-columns: 1fr; }
+  .demo-pet-photo { height: 190px; }
+}
